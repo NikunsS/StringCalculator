@@ -37,4 +37,11 @@ public class CalculatorTest {
         Assert.assertEquals(result, 15);
     }
 
+    @Test
+    void numbers_split_by_newline_or_comma_returns_sum() {
+        var calculator = new StringCalculator();
+        var result = calculator.Add("1\n2,3");
+
+        Assert.assertEquals(result, 6);
+    }
 }
