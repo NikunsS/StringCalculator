@@ -44,4 +44,12 @@ public class CalculatorTest {
 
         Assert.assertEquals(result, 6);
     }
+
+    @Test
+    void numbers_split_by_custom_delimiter() {
+        var calculator = new StringCalculator();
+        var result = calculator.Add("//;\n1;2;2");
+
+        Assert.assertEquals(result, 5);
+    }
 }
