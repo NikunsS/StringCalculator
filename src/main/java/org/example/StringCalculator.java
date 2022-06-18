@@ -34,6 +34,7 @@ public class StringCalculator {
     private List<Integer> getNumbers(String numbers, String delimiter) {
         return Stream.of(numbers.split(delimiter))
                 .map(Integer::valueOf)
+                .filter(n -> n < 1000)
                 .collect(toList());
     }
     private void determineNegativeNumbers(List<Integer> numbers) throws IllegalArgumentException {

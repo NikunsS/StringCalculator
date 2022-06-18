@@ -51,4 +51,10 @@ public class CalculatorTest {
         assertThat(exception)
                 .hasMessageContaining("negatives not allowed: [-1, -3, -4]");
     }
+
+    @Test
+    void ignore_numbers_greater_than_1000() {
+        assertThat(calculator.Add("1,3,1001,6"))
+                .isEqualTo(10);
+    }
 }
